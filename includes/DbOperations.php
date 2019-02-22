@@ -105,7 +105,7 @@ class DbOperations
      */
     public function getAllUsers()
     {
-        $stmt = $this->con->prepare("SELECT id,email,name,school from users ");
+        $stmt = $this->con->prepare("SELECT id,email,name,school from users ORDER BY id DESC ");
         $stmt->execute();
         $stmt->bind_result($id, $email, $name, $school);
         $users = array();
